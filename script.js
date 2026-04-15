@@ -6,7 +6,7 @@ $(document).ready(function(){
         }else{
             $('.navbar').removeClass("sticky");
         }
-        
+
         // scroll-up button show/hide script
         if(this.scrollY > 500){
             $('.scroll-up-btn').addClass("show");
@@ -35,14 +35,7 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: [" data enthusiast "],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-
-    var typed = new Typed(".typing-2", {
-        strings: ["data analysis", "data engineering", "business intelligence"],
+        strings: ["Data & AI Engineer", "Pipeline Architect", "Dashboard Storyteller", "ML Practitioner"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true

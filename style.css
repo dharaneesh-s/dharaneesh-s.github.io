@@ -192,6 +192,18 @@ body:hover .cursor-glow { opacity: 1; }
     transition: var(--transition);
 }
 .nav-cta:hover { background: rgba(100, 255, 218, 0.1); }
+.nav-resume {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: var(--transition);
+    margin-right: 8px;
+}
+.nav-resume:hover { background: rgba(100, 255, 218, 0.1); }
+.nav-resume i { margin-left: 4px; font-size: 11px; }
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -547,6 +559,59 @@ body:hover .cursor-glow { opacity: 1; }
     color: var(--text);
 }
 
+/* Wide project card (spans 2 columns) */
+.pc-wide {
+    grid-column: span 2;
+}
+
+/* Screenshot thumbnails */
+.pc-screenshots {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+.pc-screenshots img {
+    width: 120px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 6px;
+    border: 1px solid #233554;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+.pc-screenshots img:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(100, 255, 218, 0.1);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.lightbox.active {
+    display: flex;
+}
+.lightbox img {
+    max-height: 90vh;
+    max-width: 90vw;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 0 40px rgba(100, 255, 218, 0.15);
+}
+
 /* ── Skills ── */
 #skills { padding: 100px 0; }
 .skills-grid {
@@ -725,7 +790,7 @@ footer p {
     .awards-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-    .nav-links, .nav-cta { display: none; }
+    .nav-links, .nav-cta, .nav-resume { display: none; }
     .nav-toggle { display: flex; }
     .nav-links.open {
         display: flex;
@@ -761,6 +826,7 @@ footer p {
 }
 @media (max-width: 600px) {
     .project-grid { grid-template-columns: 1fr; }
+    .pc-wide { grid-column: span 1; }
     .hero-actions { flex-direction: column; width: fit-content; }
     .stats-row { grid-template-columns: 1fr 1fr; }
     .contact-links { flex-direction: column; align-items: center; gap: 16px; }

@@ -11,6 +11,9 @@
 </head>
 <body>
 
+    <!-- cursor glow -->
+    <div class="cursor-glow"></div>
+
     <!-- nav -->
     <nav id="nav">
         <div class="nav-inner">
@@ -31,7 +34,7 @@
 
     <!-- hero -->
     <section id="hero">
-        <div class="hero-bg"></div>
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <p class="hero-greeting" data-aos="fade-up">Hi, my name is</p>
             <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">Dharaneesh.</h1>
@@ -66,6 +69,24 @@
                     <div class="image-wrapper">
                         <img src="images/profile-1.jpeg" alt="Dharaneesh">
                     </div>
+                </div>
+            </div>
+            <div class="stats-row" data-aos="fade-up">
+                <div class="stat">
+                    <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-target="150">0</span><span class="stat-plus">M+</span>
+                    <p>Records Engineered</p>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-target="400">0</span><span class="stat-plus">M+</span>
+                    <p>Federal $ Managed</p>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-target="30">0</span><span class="stat-plus">+</span>
+                    <p>Production Releases</p>
                 </div>
             </div>
         </div>
@@ -129,104 +150,93 @@
     <!-- projects -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-heading" data-aos="fade-up"><span class="heading-num">03.</span> Things I've Built</h2>
-
-            <!-- featured projects -->
-            <div class="featured-project" data-aos="fade-up">
-                <div class="fp-image">
-                    <img src="./images/banner.jpg" alt="AI Trading Bot">
-                </div>
-                <div class="fp-content right-aligned">
-                    <p class="fp-label">Featured Project</p>
-                    <h3>AI Trading Bot</h3>
-                    <div class="fp-desc">
-                        <p>End-to-end autonomous market analysis system using Llama 3.3 70B. Real-time price feeds via Finnhub WebSocket, social sentiment from Walter Bloomberg, and a Discord bot interface scanning 74 tickers across 13 sectors.</p>
-                    </div>
-                    <ul class="fp-tech">
-                        <li>Python</li><li>Llama 3.3</li><li>WebSocket</li><li>FastAPI</li><li>Discord.py</li><li>RSS</li>
-                    </ul>
-                    <div class="fp-links">
-                        <a href="https://github.com/dharaneesh-s/Market-Int" target="_blank"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="featured-project" data-aos="fade-up">
-                <div class="fp-image">
-                    <img src="./images/project-2.jpg" alt="UCP Platform">
-                </div>
-                <div class="fp-content left-aligned">
-                    <p class="fp-label">Featured Project</p>
-                    <h3>Nonprofit Transparency Platform</h3>
-                    <div class="fp-desc">
-                        <p>Full-stack AI platform for United Cerebral Palsy's 50+ affiliates to analyze IRS Form 990 filings, replacing $150K+/year in vendor costs. Dual FastAPI microservices with GPT-4-powered financial Q&A.</p>
-                    </div>
-                    <ul class="fp-tech">
-                        <li>React</li><li>FastAPI</li><li>GPT-4</li><li>Supabase</li><li>Recharts</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- project grid -->
-            <h3 class="other-heading" data-aos="fade-up">Other Projects</h3>
+            <h2 class="section-heading" data-aos="fade-up"><span class="heading-num">03.</span> Projects</h2>
             <div class="project-grid">
-                <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
                     <div class="pc-top">
                         <i class="fas fa-folder-open"></i>
                         <div class="pc-links">
-                            <a href="./images/House Prices _ Final Report.pdf" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/dharaneesh-s/Market-Int" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
-                    <h4>House Price Prediction</h4>
-                    <p>Ensemble model (glmnet, RF, XGBoost) on 79 features. Ranked top 3% of 5,000+ teams on Kaggle with 0.12 RMSLE.</p>
-                    <ul class="pc-tech"><li>R</li><li>XGBoost</li><li>glmnet</li></ul>
+                    <h4>AI Trading Bot</h4>
+                    <p>Autonomous market analysis system using Llama 3.3 70B. Real-time Finnhub WebSocket feeds, Walter Bloomberg sentiment via RSS, Discord bot scanning 74 tickers across 13 sectors.</p>
+                    <ul class="pc-tech"><li>Python</li><li>Llama 3.3</li><li>WebSocket</li><li>FastAPI</li><li>Discord.py</li></ul>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
                     <div class="pc-top">
                         <i class="fas fa-folder-open"></i>
-                        <div class="pc-links">
-                            <a href="./images/Team 28 - Grad - Infographic - Team Kakashi (3).pdf" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
                     </div>
-                    <h4>Super Bowl Ad Analytics</h4>
-                    <p>Analyzed ~1M tweets for ad sentiment and ROI. Won 1st place out of 70 teams in the Utah Game Day Analytics Challenge.</p>
-                    <ul class="pc-tech"><li>MongoDB</li><li>Twitter API</li><li>NLP</li><li>Tableau</li></ul>
+                    <h4>Nonprofit Transparency Platform</h4>
+                    <p>Full-stack AI platform for United Cerebral Palsy's 50+ affiliates to analyze IRS Form 990 filings, replacing $150K+/year in vendor costs. GPT-4-powered financial Q&A.</p>
+                    <ul class="pc-tech"><li>React</li><li>FastAPI</li><li>GPT-4</li><li>Supabase</li><li>Recharts</li></ul>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
                     <div class="pc-top">
                         <i class="fas fa-folder-open"></i>
                     </div>
                     <h4>Intelligent PDF Extractor</h4>
-                    <p>Pipeline converting unstructured PDFs into structured data at 90%+ accuracy using OCR, Transformers, and multi-LLM reasoning.</p>
+                    <p>Pipeline converting unstructured government PDFs into structured data at 90%+ accuracy using OCR, Hugging Face Transformers, and multi-LLM reasoning (GPT-4 + Perplexity).</p>
                     <ul class="pc-tech"><li>Tesseract</li><li>spaCy</li><li>GPT-4</li><li>FastAPI</li></ul>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
                     <div class="pc-top">
                         <i class="fas fa-folder-open"></i>
                     </div>
                     <h4>Healthcare Data Engineering</h4>
-                    <p>Spark + AWS Glue pipelines for genomics and clinical literature at Rigor Health. Reduced AWS costs by 25%.</p>
-                    <ul class="pc-tech"><li>Spark</li><li>AWS Glue</li><li>SageMaker</li></ul>
+                    <p>Spark + AWS Glue pipelines for unstructured genomics and clinical literature at Rigor Health. Trained ML models via SageMaker. Reduced AWS costs by 25%.</p>
+                    <ul class="pc-tech"><li>Spark</li><li>AWS Glue</li><li>SageMaker</li><li>Python</li></ul>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
                     <div class="pc-top">
                         <i class="fas fa-folder-open"></i>
                         <div class="pc-links">
-                            <a href="https://public.tableau.com/app/profile/dharaneesh.subramani/viz/Swire-Analysis/Dashboard1" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://public.tableau.com/app/profile/dharaneesh.subramani/viz/Swire-Analysis/Dashboard1" target="_blank" aria-label="Dashboard"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <h4>Swire Coca-Cola Prediction</h4>
-                    <p>Classification models predicting B2B customer success using sales data + Yelp reviews. 94% accuracy with Random Forest.</p>
+                    <p>Classification models predicting B2B customer success using sales data + Yelp reviews. 94% accuracy with Random Forest. Real-time Tableau dashboard for the sales team.</p>
                     <ul class="pc-tech"><li>Python</li><li>XGBoost</li><li>Yelp API</li><li>Tableau</li></ul>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                    <div class="pc-top">
+                        <i class="fas fa-folder-open"></i>
+                        <div class="pc-links">
+                            <a href="./images/House Prices _ Final Report.pdf" target="_blank" aria-label="Report"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h4>House Price Prediction</h4>
+                    <p>Ensemble model (glmnet, Random Forest, XGBoost) on 79 features. Ranked top 3% of 5,000+ teams on Kaggle with 0.12 RMSLE and 0.89 R-squared.</p>
+                    <ul class="pc-tech"><li>R</li><li>XGBoost</li><li>glmnet</li><li>Kaggle</li></ul>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
+                    <div class="pc-top">
+                        <i class="fas fa-folder-open"></i>
+                        <div class="pc-links">
+                            <a href="./images/Team 28 - Grad - Infographic - Team Kakashi (3).pdf" target="_blank" aria-label="Infographic"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h4>Super Bowl Ad Analytics</h4>
+                    <p>Analyzed ~1M tweets for ad sentiment and ROI measurement. NLP pipelines for real-time analysis. Won 1st place out of 70 teams in Utah Game Day Analytics Challenge.</p>
+                    <ul class="pc-tech"><li>MongoDB</li><li>Twitter API</li><li>NLP</li><li>Tableau</li></ul>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
                     <div class="pc-top">
                         <i class="fas fa-folder-open"></i>
                     </div>
                     <h4>Intelligent Tutor System</h4>
-                    <p>Adaptive learning web app teaching English grammar using ID3 decision trees. Published in NCCC20 conference.</p>
-                    <ul class="pc-tech"><li>Python</li><li>Flask</li><li>ID3</li></ul>
+                    <p>Adaptive web app teaching English grammar using ID3 decision trees for personalized learning paths. Published research paper in NCCC20 conference (March 2020).</p>
+                    <ul class="pc-tech"><li>Python</li><li>Flask</li><li>ID3</li><li>Published</li></ul>
                 </div>
+
             </div>
         </div>
     </section>

@@ -226,22 +226,29 @@ if (canvas) {
     animate();
 }
 
-// ── Lightbox for screenshots ──
-function openLightbox(img) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add('active');
+// ── Gallery modal for bot screenshots ──
+function openGallery(e) {
+    e.preventDefault();
+    document.getElementById('lightbox').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active');
+function closeLightbox(e) {
+    document.getElementById('lightbox').classList.remove('active');
     document.body.style.overflow = '';
 }
+function openLightboxFull(img) {
+    const full = document.getElementById('lightbox-full');
+    document.getElementById('lightbox-full-img').src = img.src;
+    full.classList.add('active');
+}
+function closeLightboxFull() {
+    document.getElementById('lightbox-full').classList.remove('active');
+}
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Escape') {
+        closeLightboxFull();
+        closeLightbox();
+    }
 });
 
 // ── Smooth scroll for anchor links ──

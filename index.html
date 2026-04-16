@@ -154,20 +154,17 @@
             <h2 class="section-heading" data-aos="fade-up"><span class="heading-num">03.</span> Projects</h2>
             <div class="project-grid">
 
-                <div class="project-card pc-wide" data-aos="fade-up" data-aos-delay="0">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
                     <div class="pc-top">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-folder-open"></i>
                         <div class="pc-links">
+                            <a href="#" aria-label="Screenshots" onclick="openGallery(event)"><i class="fas fa-images"></i></a>
                             <a href="https://github.com/dharaneesh-s/Market-Int" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <h4>AI Trading Bot &mdash; Leo of Wall Street</h4>
-                    <p>Autonomous market analysis system using Llama 3.3 70B. Real-time Finnhub WebSocket feeds, Walter Bloomberg sentiment via RSS, Discord bot scanning 74 tickers across 13 sectors with 0DTE options scoring.</p>
-                    <div class="pc-screenshots">
-                        <img src="images/IMG_3667.jpg" alt="0DTE Plays" onclick="openLightbox(this)">
-                        <img src="images/IMG_3668.jpg" alt="Walter Bloomberg Sentiment" onclick="openLightbox(this)">
-                    </div>
-                    <ul class="pc-tech"><li>Python</li><li>Llama 3.3</li><li>WebSocket</li><li>FastAPI</li><li>Discord.py</li><li>RSS</li></ul>
+                    <p>Autonomous market analysis system using Llama 3.3 70B. Real-time Finnhub WebSocket feeds, Walter Bloomberg sentiment via RSS, Discord bot scanning 74 tickers across 13 sectors.</p>
+                    <ul class="pc-tech"><li>Python</li><li>Llama 3.3</li><li>WebSocket</li><li>FastAPI</li><li>Discord.py</li></ul>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
@@ -363,9 +360,25 @@
         <p>Designed & Built by Dharaneesh</p>
     </footer>
 
-    <!-- lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="">
+    <!-- lightbox gallery -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-inner" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+            <h3>Leo of Wall Street &mdash; Live Screenshots</h3>
+            <div class="lightbox-gallery">
+                <div class="lb-item">
+                    <img src="images/IMG_3667.jpg" alt="0DTE Plays" onclick="openLightboxFull(this)">
+                    <p>0DTE Options Plays &mdash; Grades, targets & verdicts</p>
+                </div>
+                <div class="lb-item">
+                    <img src="images/IMG_3668.jpg" alt="Walter Bloomberg Sentiment" onclick="openLightboxFull(this)">
+                    <p>Walter Bloomberg &mdash; Real-time sentiment analysis</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lightbox-full" id="lightbox-full" onclick="closeLightboxFull()">
+        <img id="lightbox-full-img" src="" alt="">
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

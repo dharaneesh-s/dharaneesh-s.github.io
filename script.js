@@ -244,10 +244,25 @@ function openLightboxFull(img) {
 function closeLightboxFull() {
     document.getElementById('lightbox-full').classList.remove('active');
 }
+// ── Video modal for UCP demo ──
+function openVideo(e) {
+    e.preventDefault();
+    document.getElementById('video-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeVideo(e) {
+    const modal = document.getElementById('video-modal');
+    const video = document.getElementById('demo-video');
+    video.pause();
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeLightboxFull();
         closeLightbox();
+        closeVideo();
     }
 });
 

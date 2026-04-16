@@ -170,6 +170,9 @@
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
                     <div class="pc-top">
                         <i class="fas fa-folder-open"></i>
+                        <div class="pc-links">
+                            <a href="#" aria-label="Watch Demo" onclick="openVideo(event)"><i class="fas fa-play-circle"></i></a>
+                        </div>
                     </div>
                     <h4>Nonprofit Transparency Platform</h4>
                     <p>Full-stack AI platform for United Cerebral Palsy's 50+ affiliates to analyze IRS Form 990 filings, replacing $150K+/year in vendor costs. GPT-4-powered financial Q&A.</p>
@@ -379,6 +382,16 @@
     </div>
     <div class="lightbox-full" id="lightbox-full" onclick="closeLightboxFull()">
         <img id="lightbox-full-img" src="" alt="">
+    </div>
+
+    <!-- video modal -->
+    <div class="video-modal" id="video-modal" onclick="closeVideo(event)">
+        <div class="video-inner" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeVideo(event)">&times;</button>
+            <video id="demo-video" controls preload="none">
+                <source src="images/ucp-demo.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

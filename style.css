@@ -644,6 +644,29 @@ body:hover .cursor-glow { opacity: 1; }
     object-fit: contain;
 }
 
+/* Video modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.video-modal.active { display: flex; }
+.video-inner {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+}
+.video-inner video {
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+}
+
 /* ── Skills ── */
 #skills { padding: 100px 0; }
 .skills-grid {

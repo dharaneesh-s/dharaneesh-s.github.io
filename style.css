@@ -773,6 +773,50 @@ body:hover .cursor-glow { opacity: 1; }
     color: var(--accent);
 }
 
+/* ── Education ── */
+#education { padding: 100px 0; }
+.edu-row {
+    display: flex;
+    gap: 30px;
+    max-width: 900px;
+}
+.edu-item {
+    flex: 1;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 24px;
+    background: var(--bg-light);
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.edu-item:hover {
+    border-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+}
+.edu-icon {
+    font-size: 24px;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.edu-item h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+}
+.edu-school {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+.edu-meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text);
+}
+
 /* ── Contact ── */
 #contact {
     padding: 100px 0 150px;
@@ -843,6 +887,7 @@ footer p {
     .project-grid { grid-template-columns: 1fr 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .awards-row { grid-template-columns: 1fr; }
+    .edu-row { flex-direction: column; }
 }
 @media (max-width: 768px) {
     .nav-links, .nav-cta, .nav-resume { display: none; }
